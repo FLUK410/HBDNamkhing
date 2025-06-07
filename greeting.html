@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>สุขสันต์วันเกิด!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Mali&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #ffccff, #ccffff);
+      font-family: 'Mali', sans-serif;
+      text-align: center;
+      padding: 50px;
+      color: #333;
+    }
+    h1 {
+      font-size: 3em;
+      color: #ff3399;
+    }
+    p {
+      font-size: 1.5em;
+      color: #3366cc;
+    }
+    #playSongButton {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 8px;
+      background-color: #66ccff;
+      color: #ff3399;
+      cursor: pointer;
+    }
+    #playSongButton:hover {
+      background-color: #50b8e7;
+    }
+    #playSongButton:active {
+      background-color: #40a0d0;
+    }
+    img {
+      margin-top: 30px;
+      max-width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    audio {
+      margin-top: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>สุขสันต์วันเกิดนะคับ 🎉</h1>
+  <p>ขอให้มีความสุขมาก ๆ สมหวังทุกเรื่องนะครับ 💖</p>
+  <p>และขอให้เป็นน้องที่มีความสุขทุกเรื่องงงงงเลยย🤩</p>
+  <p>โตขึ้นแล้วก็ขอให้มีความตั้งใจมากขึ้นนะ 😀</p>
+  <p>เลิกใช้เพื่อนเก็บของด้วยนะคับ😁😜</p>
+
+
+  <img src="images/Namkhing.jpg" alt="รูปเจ้าของวันเกิด"/>
+
+  <p>เสียใจว่ะไม่มีรูปอ่ะ;[</p>
+
+  <br>
+  <button onclick="playSong()" id="playSongButton">กดเพื่อเปิดเพลง 🎵</button>
+  <audio id="song" controls style="display: none;">
+    <source src="songs/ข้างกาย.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    let isPlaying = false;
+    function playSong() {
+      const audio = document.getElementById("song");
+      const button = document.getElementById("playSongButton");
+
+      audio.style.display = "block";
+
+      if (isPlaying) {
+        audio.pause();
+        isPlaying = false;
+        button.innerText = "กดเพื่อเปิดเพลง ♪♫";
+      } else {
+        audio.play();
+        isPlaying = true;
+        button.innerText = "กดเพื่อหยุดเพลง ►";
+      }
+    }
+  </script>
+</body>
+</html>
